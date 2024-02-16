@@ -1,0 +1,39 @@
+{
+  "name": "Your Collection #2",
+  "description": "Remember to replace this description",
+  "image": "ipfs://QmdiZTaYUioc43ho8QKtqGbF2He9vA25SNUZhCnozZZJr4/2.png",
+  "dna": "4437eaa2f0c5d2a0d6f5e1a28b225044216ad860",
+  "edition": 2,
+  "date": 1668706038578,
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Black"
+    },
+    {
+      "trait_type": "Eyeball",
+      "value": "White"
+    },
+    {
+      "trait_type": "Eye color",
+      "value": "Pink"
+    },
+    {
+      "trait_type": "Iris",
+      "value": "Small"
+    },
+    {
+      "trait_type": "Shine",
+      "value": "Shapes"
+    },
+    {
+      "trait_type": "Bottom lid",
+      "value": "Low"
+    },
+    {
+      "trait_type": "Top lid",
+      "value": "Middle"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}
