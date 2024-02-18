@@ -13,13 +13,23 @@ contract CaesarNFT is ERC721, Ownable {
     uint public tokenId = 1;
     string _baseUri;
 
-    constructor() ERC721("CaesarNFT", "CSR") {}
+    // constructor() ERC721("CaesarNFT", "CSR") {}
+
+    constructor(
+        address initialOwner
+    ) ERC721("MyToken", "MTK") Ownable(initialOwner) {}
     event NFTMinted(address indexed minter, uint indexed tokenId);
 
     function tokenURI(
-        uint256 _tokenIfd
+        uint256 _tokenId
     ) public view override returns (string memory) {
-        require(_exists(_tokenIfd), "The URI does not exist for this token ");
+        // require(_exists(_tokenId), "The URI does not exist for this token ");
+
+        require(
+            ownerOf(tokenId) != address(0),
+            "The URI does not exist for this token "
+        );
+
         string memory baseURI = _baseURI();
         return
             bytes(baseURI).length != 0
@@ -29,13 +39,15 @@ contract CaesarNFT is ERC721, Ownable {
                 : "";
     }
 
-    function _baseUri() internal view override returns (string memory) {
+    function _baseURI() internal view override returns (string memory) {
         return _baseUri;
     }
 
     function mint() public payable {
         require(msg.value >= price, "Ether sent by user is not sufficient");
         require(tokenId <= MAX_SUUPPLY, "Sold out Token");
+        _safeMint(msg.sender, tokenId);
+        emit NFTMinted(msg.sender, tokenId);
         tokenId++;
     }
 
