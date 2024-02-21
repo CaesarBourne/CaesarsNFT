@@ -11,7 +11,8 @@ contract CaesarNFT is ERC721, Ownable {
     uint public constant MAX_SUUPPLY = 10;
     uint public price = 0.001 ether;
     uint public tokenId = 1;
-    string _baseUri;
+    string _baseUri =
+        "ipfs://QmTJC2ewysg9KEKQ5nGXXpRKS4z8fiJVQ4gUshRJMdRdkM/1.json";
 
     // constructor() ERC721("CaesarNFT", "CSR") {}
 
